@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { SchedulerService } from './marketCap.service';
 import { HttpService } from '@nestjs/axios';
 import { of } from 'rxjs';
-import { MARKETCAP_REPOSITORY } from 'src/core/constants';
+import { MARKETCAP_REPOSITORY } from '../../core/constants';
 
 describe('SchedulerService', () => {
   let service: SchedulerService;

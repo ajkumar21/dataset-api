@@ -43,7 +43,7 @@ describe('UserService', () => {
     password: '123456',
     role: Role.quant,
     approvedDatasets: [
-      { symbol: Asset.BTC, frequencyDetails: [{ frequency: Frequency.daily }] },
+      { symbol: Asset.BTC, frequencyInfo: [{ frequency: Frequency.daily }] },
     ],
     save: jest.fn(),
   };
@@ -93,7 +93,7 @@ describe('UserService', () => {
       approvedDatasets: [
         {
           symbol: mockDataSetRequest.symbol,
-          frequencyDetails: [mockDataSetRequest.frequencyInfo],
+          frequencyInfo: [mockDataSetRequest.frequencyInfo],
         },
       ],
     });
@@ -112,7 +112,7 @@ describe('UserService', () => {
       approvedDatasets: [
         {
           symbol: Asset.BTC,
-          frequencyDetails: [
+          frequencyInfo: [
             { frequency: Frequency.daily },
             { frequency: Frequency.hourly },
           ],

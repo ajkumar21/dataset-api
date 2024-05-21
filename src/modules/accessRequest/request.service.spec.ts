@@ -3,7 +3,7 @@ import { RequestsService } from './request.service';
 import { UsersService } from '../users/users.service';
 import { Asset, Frequency } from '../model/asset.enum';
 import { Role } from '../model/role.enum';
-import { REQUEST_REPOSITORY } from 'src/core/constants';
+import { REQUEST_REPOSITORY } from '../../core/constants';
 
 describe('RequestsService', () => {
   let requestsService: RequestsService;
