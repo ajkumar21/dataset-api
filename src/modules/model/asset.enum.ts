@@ -9,17 +9,25 @@ export enum Frequency {
   monthly = 'm1',
 }
 
-export type assetCombinationValue = { name: string; frequencies: Frequency[] };
+export type assetCombinationValue = {
+  name: string;
+  symbol: string;
+  frequencies: Frequency[];
+};
 
 export const assetCombinationMap = new Map<Asset, assetCombinationValue>([
   [
     Asset.BTC,
     {
       name: 'Bitcoin',
+      symbol: 'BTC',
       frequencies: [Frequency.hourly, Frequency.daily, Frequency.monthly],
     },
   ],
-  [Asset.ETH, { name: 'Ethereum', frequencies: [Frequency.daily] }],
+  [
+    Asset.ETH,
+    { name: 'Ethereum', symbol: 'ETH', frequencies: [Frequency.daily] },
+  ],
 ]);
 
 type FrequencyInfo = {
