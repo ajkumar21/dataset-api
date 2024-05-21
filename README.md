@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A REST API for retrieving asset pricing data from the Coincap API. This backend service uses NestJS, Typescript and Sequelize.
 
 ## Installation
 
