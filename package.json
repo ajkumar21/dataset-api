@@ -19,7 +19,6 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "test:e2e:watch": "jest --config ./test/jest-e2e.json --watch --detectOpenHandles"
-
   },
   "dependencies": {
     "@golevelup/ts-jest": "^0.5.0",
@@ -30,6 +29,7 @@
     "@nestjs/jwt": "^10.2.0",
     "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/schedule": "^4.0.2",
     "@nestjs/sequelize": "^10.0.1",
     "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
