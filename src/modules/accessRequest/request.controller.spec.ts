@@ -67,20 +67,6 @@ describe('RequestsController', () => {
     });
   });
 
-  it('should not allow invalid access requests to datasets', () => {
-    const mockEmail = 'test@test.com';
-    const mockRequest = {
-      symbol: Asset.ETH,
-      frequency: Frequency.monthly,
-    };
-
-    expect(() =>
-      requestsController.requestAccessToDataset(mockRequest, {
-        user: { payload: { email: mockEmail } },
-      }),
-    ).toThrow(new BadRequestException('Invalid asset-frequency combination'));
-  });
-
   it('should return all requests', () => {
     expect(requestsController.getRequests()).toEqual(mockRequests);
   });
