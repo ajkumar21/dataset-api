@@ -42,5 +42,5 @@ export type DataSet = {
 
 export type RequestDataSet = {
   symbol: Asset;
-  frequencyInfo: { frequency: Frequency; expiryDate?: Date };
+  frequencyInfo: FrequencyInfo;
 };
