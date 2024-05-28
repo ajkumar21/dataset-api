@@ -68,9 +68,14 @@ describe('RequestsService', () => {
     expect(requestsService.getDatasetMetadata()).toEqual({
       bitcoin: {
         name: 'Bitcoin',
+        symbol: 'BTC',
         frequencies: [Frequency.hourly, Frequency.daily, Frequency.monthly],
       },
-      ethereum: { name: 'Ethereum', frequencies: [Frequency.daily] },
+      ethereum: {
+        name: 'Ethereum',
+        symbol: 'ETH',
+        frequencies: [Frequency.daily],
+      },
     });
   });
 
