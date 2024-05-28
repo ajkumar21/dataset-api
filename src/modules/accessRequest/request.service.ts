@@ -22,6 +22,13 @@ export class RequestsService {
   }
 
   async create(request: RequestDto, email: string): Promise<Request> {
+    if (
+      !assetCombinationMap
+        .get(request.symbol)
+        .frequencies.includes(request.frequency)
+    ) {
+      throw new BadRequestException('Invalid asset-frequency combination');
+    }
     return await this.requestRepository.create<Request>({
       email,
       ...request,

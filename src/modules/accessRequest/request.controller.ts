@@ -5,7 +5,6 @@ import {
   UseGuards,
   Request,
   Get,
-  BadRequestException,
   Query,
   HttpCode,
 } from '@nestjs/common';
@@ -15,7 +14,6 @@ import { RolesGuard } from '../../core/guards/roles.guard';
 import { RequestsService } from './request.service';
 import { RequestDto } from './dto/request.dto';
 import { HasRoles } from '../auth/has-roles.decorator';
-import { assetCombinationMap } from '../model/asset.enum';
 import { DoesRequestExist } from '../../core/guards/doesRequestExist.guard';
 
 @Controller('request')
@@ -33,14 +31,6 @@ export class RequestsController {
   @UseGuards(AuthGuard('jwt'), RolesGuard, DoesRequestExist)
   @Post('access')
   requestAccessToDataset(@Body() request: RequestDto, @Request() req: any) {
-    if (
-      !assetCombinationMap
-        .get(request.symbol)
-        .frequencies.includes(request.frequency)
-    ) {
-      throw new BadRequestException('Invalid asset-frequency combination');
-    }
-
     return this.requestService.create(request, req.user.payload.email);
   }
 
